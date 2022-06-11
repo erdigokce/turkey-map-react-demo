@@ -1,4 +1,4 @@
-/* eslint-disable no-return-await */
+/* eslint-disable no-return-await,max-len */
 const endpoint = 'https://sonuc.ysk.gov.tr/api';
 
 const headers = {
