@@ -1,24 +1,52 @@
-g[id="turkiye"] > g[data-is-election-city="false"] > path {
-    fill: gray !important;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-g[id="turkiye"] > g[data-is-election-city="false"] > path:hover {
-    fill: darkgray !important;
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-g[id="turkiye"] > g[data-is-election-city="true"] > path {
-    fill: darkred !important;
+.map-container {
+  flex: 1;
+  padding: 20px;
 }
 
-g[id="turkiye"] > g[data-is-election-city="true"] > path:hover {
-    fill: orangered !important;
+.tab-layout {
+  width: 100%;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  padding: 10px;
 }
 
-h1 {
-    text-align: center;
+.tab {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s;
 }
 
-table {
-    margin: auto;
-    margin-bottom: 100px;
+.tab:hover {
+  background-color: #e0e0e0;
+}
+
+.active-tab {
+  background-color: #007bff;
+  color: white;
+}
+
+.hover-info {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
 }
