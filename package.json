@@ -9,7 +9,7 @@
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-scripts": "^5.0.1",
-    "turkey-map-react": "file:../turkey-map-react",
+    "turkey-map-react": "^2.0.0",
     "web-vitals": "^5.1.0"
   },
   "scripts": {
