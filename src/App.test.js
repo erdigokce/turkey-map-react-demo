@@ -1,17 +1,19 @@
 import { render, screen } from '@testing-library/react';
+import {
+  describe, expect, test, vi,
+} from 'vitest';
 import App from './App';
 
-jest.mock(
-  'turkey-map-react',
-  () => function () {
-    return <div data-testid="turkey-map-mock" />;
-  },
-);
+vi.mock('turkey-map-react', () => ({
+  default: () => <div data-testid="turkey-map-mock" />, // lightweight mock component
+}));
 
-test('renders turkey population heatmap title', () => {
-  render(<App />);
-  const heading = screen.getByRole('heading', {
-    name: /turkey population heatmap/i,
+describe('App', () => {
+  test('renders turkey population heatmap title', () => {
+    render(<App />);
+    const heading = screen.getByRole('heading', {
+      name: /turkey population heatmap/i,
+    });
+    expect(heading).toBeInTheDocument();
   });
-  expect(heading).toBeInTheDocument();
 });

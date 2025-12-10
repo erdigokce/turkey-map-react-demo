@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import TabLayout from './components/TabLayout';
+import EarthquakeMap from './components/EarthquakeMap';
 
 function App() {
   return (
     <div className="App">
-      <TabLayout />
+      <EarthquakeMap />
     </div>
   );
 }

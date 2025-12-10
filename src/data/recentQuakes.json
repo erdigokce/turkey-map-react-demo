@@ -1,0 +1,102 @@
+[
+  {
+    "id": "2025-01",
+    "timeUtc": "2025-11-28T06:14:00Z",
+    "magnitude": 5.6,
+    "depthKm": 12,
+    "provincePlate": 31,
+    "location": "Hatay / Samandag",
+    "lat": 36.1,
+    "lon": 35.9
+  },
+  {
+    "id": "2025-02",
+    "timeUtc": "2025-11-25T21:48:00Z",
+    "magnitude": 4.8,
+    "depthKm": 9,
+    "provincePlate": 44,
+    "location": "Malatya / Pütürge",
+    "lat": 38.2,
+    "lon": 38.9
+  },
+  {
+    "id": "2025-03",
+    "timeUtc": "2025-11-20T03:03:00Z",
+    "magnitude": 4.4,
+    "depthKm": 18,
+    "provincePlate": 11,
+    "location": "Bilecik / Bozüyük",
+    "lat": 39.9,
+    "lon": 29.9
+  },
+  {
+    "id": "2025-04",
+    "timeUtc": "2025-11-18T11:31:00Z",
+    "magnitude": 5.1,
+    "depthKm": 7,
+    "provincePlate": 48,
+    "location": "Muğla / Köyceğiz",
+    "lat": 36.9,
+    "lon": 28.7
+  },
+  {
+    "id": "2025-05",
+    "timeUtc": "2025-11-10T15:22:00Z",
+    "magnitude": 4.9,
+    "depthKm": 14,
+    "provincePlate": 12,
+    "location": "Bingöl / Genç",
+    "lat": 38.8,
+    "lon": 40.6
+  },
+  {
+    "id": "2025-06",
+    "timeUtc": "2025-11-04T07:05:00Z",
+    "magnitude": 4.3,
+    "depthKm": 10,
+    "provincePlate": 34,
+    "location": "İstanbul / Silivri",
+    "lat": 41.0,
+    "lon": 28.2
+  },
+  {
+    "id": "2025-07",
+    "timeUtc": "2025-10-29T19:02:00Z",
+    "magnitude": 4.7,
+    "depthKm": 22,
+    "provincePlate": 63,
+    "location": "Şanlıurfa / Bozova",
+    "lat": 37.3,
+    "lon": 38.5
+  },
+  {
+    "id": "2025-08",
+    "timeUtc": "2025-10-18T02:40:00Z",
+    "magnitude": 5.2,
+    "depthKm": 11,
+    "provincePlate": 65,
+    "location": "Van / Erciş",
+    "lat": 39.0,
+    "lon": 43.3
+  },
+  {
+    "id": "2025-09",
+    "timeUtc": "2025-10-12T14:55:00Z",
+    "magnitude": 4.5,
+    "depthKm": 8,
+    "provincePlate": 59,
+    "location": "Tekirdağ / Marmara Ereğlisi",
+    "lat": 40.9,
+    "lon": 27.9
+  },
+  {
+    "id": "2025-10",
+    "timeUtc": "2025-10-05T09:10:00Z",
+    "magnitude": 4.6,
+    "depthKm": 16,
+    "provincePlate": 23,
+    "location": "Elazığ / Sivrice",
+    "lat": 38.4,
+    "lon": 39.3
+  }
+]
