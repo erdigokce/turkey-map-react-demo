@@ -1,8 +1,17 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock(
+  'turkey-map-react',
+  () => function () {
+    return <div data-testid="turkey-map-mock" />;
+  },
+);
+
+test('renders turkey population heatmap title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const heading = screen.getByRole('heading', {
+    name: /turkey population heatmap/i,
+  });
+  expect(heading).toBeInTheDocument();
 });
