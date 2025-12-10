@@ -31,9 +31,23 @@ function TurkeyPopulationHeatmap() {
           const hoverColor = cityInfo && hoveredCity && hoveredCity.plate === city.plateNumber
             ? getHoverColor(color)
             : color;
-          const pathElement = cityComponent.props.children;
-          if (pathElement) {
-            pathElement.props.style = { ...pathElement.props.style, fill: hoverColor };
+          const { children } = cityComponent.props;
+          if (children) {
+            // If there's a single child element
+            if (React.isValidElement(children)) {
+              const child = children;
+              const style = { ...(child.props && child.props.style), fill: hoverColor };
+              const newChild = React.cloneElement(child, { style });
+              return React.cloneElement(cityComponent, {}, newChild);
+            }
+
+            // If children is an array-like structure, map safely
+            if (Array.isArray(children)) {
+              const newChildren = children.map((child) => (
+                React.isValidElement(child) ? React.cloneElement(child, { style: { ...(child.props && child.props.style), fill: hoverColor } }) : child
+              ));
+              return React.cloneElement(cityComponent, {}, ...newChildren);
+            }
           }
           return cityComponent;
         }}
