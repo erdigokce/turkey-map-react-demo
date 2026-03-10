@@ -7,4 +7,15 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.js',
   },
+  resolve: {
+    dedupe: ['react', 'react-dom'],
+  },
+  optimizeDeps: {
+    include: ['turkey-map-react'],
+  },
+  build: {
+    commonjsOptions: {
+      include: [/turkey-map-react/, /node_modules/],
+    },
+  },
 });

@@ -34,6 +34,7 @@ const formatNumber = (value) => new Intl.NumberFormat('tr-TR').format(value);
 function EarthquakeMap() {
   const [activeTab, setActiveTab] = useState('risk');
   const [hoveredPlate, setHoveredPlate] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [selectedPlate, setSelectedPlate] = useState(34);
   const [minMagnitude, setMinMagnitude] = useState(4.3);
 

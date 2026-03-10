@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^14.6.1",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "turkey-map-react": "^2.0.3",
+    "turkey-map-react": "file:../turkey-map-react",
     "web-vitals": "^5.1.0"
   },
   "scripts": {
