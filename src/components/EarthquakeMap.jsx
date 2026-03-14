@@ -174,6 +174,7 @@ function EarthquakeMap() {
             <div className="map-wrapper">
               <TurkeyMap
                 hoverable
+                showTooltip
                 // Make hoverColor transparent so the map's province fill (set in cityWrapper)
                 // remains visible and colorful instead of being overlaid with gray.
                 customStyle={{ idleColor: '#450000ff', hoverColor: '#4500009a' }}
