@@ -9,11 +9,13 @@ vi.mock('turkey-map-react', () => ({
 }));
 
 describe('App', () => {
-  test('renders turkey population heatmap title', () => {
+  test('renders the earthquake risk dashboard', () => {
     render(<App />);
     const heading = screen.getByRole('heading', {
-      name: /turkey population heatmap/i,
+      name: /earthquake risk \+ recent activity/i,
     });
     expect(heading).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /risk map/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /recent quakes/i })).toBeInTheDocument();
   });
 });

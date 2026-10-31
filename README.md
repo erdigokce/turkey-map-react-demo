@@ -97,6 +97,12 @@ npm unlink turkey-map-react
 npm install turkey-map-react
 ```
 
+## Automated dependency updates
+
+Dependabot checks the npm registry once a day for new `turkey-map-react` releases and opens a pull request.
+CI runs lint, tests, and the production build on every PR. Patch and minor releases are auto-merged once the
+`verify` check passes; major releases stay open for manual review.
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
