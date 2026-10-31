@@ -70,6 +70,26 @@ body {
   font-size: 13px;
 }
 
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.version-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(185, 28, 28, 0.2);
+  background: #fff;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+}
+
 .tabs {
   display: inline-flex;
   gap: 8px;

@@ -1,6 +1,7 @@
 /* eslint-disable no-bitwise */
 import React, { useMemo, useState } from 'react';
 import TurkeyMap from 'turkey-map-react';
+import { version as turkeyMapVersion } from 'turkey-map-react/package.json';
 import populationData from '../data/population.json';
 import riskLevels from '../data/earthquakeRisk.json';
 import recentQuakes from '../data/recentQuakes.json';
@@ -136,7 +137,13 @@ function EarthquakeMap() {
             A quick, expressive view of seismic risk levels by province, paired with a short feed of
             recent events. Click a province to pin details and scan the latest notable quakes.
           </p>
-          <div className="source-chip">Data: demo values inspired by AFAD hazard map + sample quake feed</div>
+          <div className="hero-meta">
+            <div className="source-chip">Data: demo values inspired by AFAD hazard map + sample quake feed</div>
+            <div className="version-chip" data-testid="turkey-map-version">
+              turkey-map-react v
+              {turkeyMapVersion}
+            </div>
+          </div>
         </div>
         <div className="tabs">
           <button
