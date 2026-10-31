@@ -1,6 +1,6 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import {
-  afterEach, describe, expect, test, vi,
+  describe, expect, test, vi,
 } from 'vitest';
 import { version as turkeyMapVersion } from 'turkey-map-react/package.json';
 import App from './App';
@@ -8,8 +8,6 @@ import App from './App';
 vi.mock('turkey-map-react', () => ({
   default: () => <div data-testid="turkey-map-mock" />, // lightweight mock component
 }));
-
-afterEach(cleanup);
 
 describe('App', () => {
   test('renders the earthquake risk dashboard', () => {
