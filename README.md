@@ -1,57 +1,78 @@
 # Map Demo
 
-This project is a React application that visualizes demographic data for Turkey through interactive heatmaps. It includes two main features: a Turkey Population Heatmap and a Turkey Unemployment Rate Heatmap. Users can switch between these two visualizations using a tab layout.
+A scenario-driven demo for [`turkey-map-react`](https://github.com/erdigokce/turkey-map-react). Each scenario lives in its own folder and is registered in one place, so new map features can be showcased without touching the existing demos.
 
 ## Project Structure
 
 ```
 turkey-map-react-demo
-├── public
-│   ├── index.html          # Main HTML file for the application
-│   └── favicon.ico         # Favicon for the application
 ├── src
 │   ├── components
-│   │   ├── Heatmap
-│   │   │   ├── TurkeyPopulationHeatmap.js  # Component for Population Heatmap
-│   │   │   └── TurkeyUnemploymentHeatmap.js # Component for Unemployment Rate Heatmap
-│   │   └── TabLayout.js    # Component for tab layout
+│   │   └── ScenarioPage.jsx              # Shared shell: hero, scenario switcher, version chip
+│   ├── scenarios
+│   │   ├── index.js                      # Scenario registry (add new demos here)
+│   │   ├── earthquake
+│   │   │   └── EarthquakeScenario.jsx    # Risk choropleth + recent quake feed
+│   │   └── metropolitan
+│   │       ├── MetropolitanScenario.jsx  # Multi-select demo
+│   │       └── metropolitanMunicipalities.json
 │   ├── data
-│   │   ├── population.json  # Population data for cities
-│   │   └── unemployment.json # Unemployment data for cities
-│   ├── App.css             # CSS styles for the application
-│   ├── App.js              # Main application component
-│   ├── index.css           # Global CSS styles
-│   └── index.js            # Entry point for the React application
-├── package.json            # npm configuration file
-├── .gitignore              # Git ignore file
-└── README.md               # Project documentation
+│   │   ├── population.json
+│   │   ├── earthquakeRisk.json
+│   │   └── recentQuakes.json
+│   ├── App.jsx                           # Renders the active scenario
+│   ├── App.css                           # Shared styles
+│   └── main.jsx                          # Entry point
+├── package.json
+└── README.md
 ```
 
 ## Setup Instructions
 
-1. **Clone the repository:**
-   ```
-   git clone <repository-url>
-   cd my-react-app
-   ```
-
-2. **Install dependencies:**
-   ```
+1. **Install dependencies:**
+   ```bash
    npm install
    ```
 
-3. **Run the application:**
-   ```
-   npm start
+2. **Run the application:**
+   ```bash
+   npm run dev
    ```
 
-4. **Open your browser:**
-   Navigate to `http://localhost:3000` to view the application.
+3. **Open your browser:**
+   Navigate to `http://localhost:5173`.
+
+Other scripts: `npm test`, `npm run lint`, and `npm run build`.
 
 ## Usage
 
-- Use the tabs on the left side of the application to switch between the Turkey Population Heatmap and the Turkey Unemployment Rate Heatmap.
-- Hover over the cities on the heatmaps to view detailed information about the population or unemployment rate.
+- Use the scenario tabs in the hero to switch between demos.
+- **Earthquake risk:** hover a province to preview its risk level, click to pin it, and filter the recent quake feed by magnitude.
+- **Büyükşehir selection:** the 30 metropolitan municipalities start selected. Click any province to add or remove it, then use **Reset to 30 büyükşehir** or **Clear all**. The side panel lists the controlled selection and the `onSelect` event.
+
+## Adding a new scenario
+
+1. Create `src/scenarios/<name>/<Name>Scenario.jsx`. It only needs to render the scenario body, usually starting with the shared `map-grid` layout.
+2. Add an entry to `SCENARIOS` in `src/scenarios/index.js`:
+
+```js
+import MyScenario from './my-scenario/MyScenario';
+
+export const SCENARIOS = [
+  // ...existing scenarios
+  {
+    id: 'my-scenario',
+    label: 'My scenario',
+    eyebrow: 'Turkey Map React · My feature',
+    title: 'A title for the hero',
+    description: 'One or two sentences shown under the title.',
+    source: 'Data: where the demo data comes from',
+    component: MyScenario,
+  },
+];
+```
+
+The first entry is the default. `ScenarioPage` provides the hero, scenario switcher, and version chip automatically, so a new scenario only owns its map, controls, and side panel.
 
 ## Testing Local Changes in turkey-map-react
 

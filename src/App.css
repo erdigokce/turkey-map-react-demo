@@ -121,6 +121,10 @@ body {
   margin-top: 12px;
 }
 
+.scenario-subtabs {
+  margin-bottom: 12px;
+}
+
 .map-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -175,6 +179,21 @@ body {
   color: #94a3b8;
 }
 
+.pill-button {
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.pill-button:hover {
+  background: #e2e8f0;
+}
+
+.pill-button:focus-visible {
+  outline: 2px solid rgba(29, 78, 216, 0.45);
+  outline-offset: 2px;
+}
+
 .legend {
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -204,6 +223,10 @@ body {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 8px;
+}
+
+.legend-swatches.is-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .legend-item {
@@ -354,6 +377,47 @@ body {
   padding: 12px;
   color: var(--muted);
   text-align: center;
+}
+
+.selection-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  max-height: 340px;
+  overflow: auto;
+}
+
+.selection-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.selection-name {
+  display: block;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.selection-meta {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.selection-population {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 .list {
