@@ -13,9 +13,20 @@ turkey-map-react-demo
 │   │   ├── index.js                      # Scenario registry (add new demos here)
 │   │   ├── earthquake
 │   │   │   └── EarthquakeScenario.jsx    # Risk choropleth + recent quake feed
-│   │   └── metropolitan
-│   │       ├── MetropolitanScenario.jsx  # Multi-select demo
-│   │       └── metropolitanMunicipalities.json
+│   │   ├── metropolitan
+│   │   │   ├── MetropolitanScenario.jsx  # Multi-select demo
+│   │   │   └── metropolitanMunicipalities.json
+│   │   ├── selection                     # Single + multiple selection, maxSelection
+│   │   ├── tooltip                       # Custom tooltip studio
+│   │   ├── disabled                      # Additive disabled-city sources
+│   │   ├── theming                       # CSS variables, customStyle, getCityStyle
+│   │   ├── accessibility                 # Roles, roving tabindex, live region, fallback
+│   │   ├── data-entry                    # Root vs /core vs /data entry points
+│   │   ├── regions
+│   │   │   └── regions.js                # Seven-region mapping + merged custom paths
+│   │   └── rendering                     # Per-province render counters
+│   ├── utils
+│   │   └── cityMetrics.js                # Population lookup + number formatting
 │   ├── data
 │   │   ├── population.json
 │   │   ├── earthquakeRisk.json
@@ -46,9 +57,23 @@ Other scripts: `npm test`, `npm run lint`, and `npm run build`.
 
 ## Usage
 
-- Use the scenario tabs in the hero to switch between demos.
-- **Earthquake risk:** hover a province to preview its risk level, click to pin it, and filter the recent quake feed by magnitude.
-- **Büyükşehir selection:** the 30 metropolitan municipalities start selected. Click any province to add or remove it, then use **Reset to 30 büyükşehir** or **Clear all**. The side panel lists the controlled selection and the `onSelect` event.
+Use the scenario tabs in the hero to switch between demos. The first two scenarios are story-driven dashboards;
+the rest are focused playgrounds for the features shipped in the latest `turkey-map-react` release.
+
+| Scenario | What it demonstrates |
+| --- | --- |
+| **Earthquake risk** | Hover, click-to-pin and a filterable quake feed on top of a choropleth. |
+| **Büyükşehir selection** | Controlled multi-select with all 30 metropolitan municipalities preselected. |
+| **Itinerary selection** | Single vs. multiple modes, `maxSelection`, `onSelect`, `onSelectionChange` and `onMaxSelectionReached`. |
+| **Tooltip studio** | `renderTooltip`, cursor/city anchoring, offset, delay, portal, pointer and focus behavior. |
+| **Winter dispatch** | `disabledCities`, `isCityDisabled`, `data[].disabled`, disabled tooltips and inert callbacks. |
+| **Theme lab** | Two instance-scoped CSS-variable themes, `customStyle` overrides and `getCityStyle` density fills. |
+| **A11y lab** | Group vs. listbox roles, one roving tab stop, arrow/Home/End navigation, live-region mirror and `a11yFallback`. |
+| **Entry points** | The 81-province root entry next to a custom 7-region map rendered through `turkey-map-react/core`. |
+| **Render radar** | Per-province render counters proving hover, selection and focus updates stay isolated. |
+
+The `security-scanning` capability is CI-only (scheduled audit, CodeQL and guarded auto-merge), so it has no map
+scenario here.
 
 ## Adding a new scenario
 
@@ -88,7 +113,7 @@ npm pack --pack-destination ../turkey-map-react-demo
 
 # 3. Install the local tarball in the demo
 cd ../turkey-map-react-demo
-npm install ./turkey-map-react-2.0.5.tgz
+npm install ./turkey-map-react-*.tgz
 
 # 4. Run the demo
 npm run dev
