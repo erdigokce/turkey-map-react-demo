@@ -20,13 +20,15 @@ export default [
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat["jsx-runtime"],
   ...reactHooksPlugin.configs["flat/recommended"],
-  importXPlugin.configs["flat/recommended"],
+  importXPlugin.flatConfigs.recommended,
   testingLibraryPlugin.configs["flat/react"],
   ...compat.config({
     extends: ["plugin:jsx-a11y/recommended"],
   }),
   {
     languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
       globals: {
         document: "readonly",
         window: "readonly",
