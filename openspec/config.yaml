@@ -1,0 +1,44 @@
+schema: spec-driven
+
+context: >
+  React 19 + Vite demo for the public turkey-map-react component. The app is a
+  scenario catalog: each scenario lives in src/scenarios/<name>/ and is
+  registered once in src/scenarios/index.js. Shared layout classes (map-grid,
+  map-card, map-wrapper, side-panel, control-row, legend, pill) come from
+  src/App.css; a scenario owns only its body, controls, and data.
+
+  Demos must remain client-side and dependency-light: no network fetches, no
+  new runtime packages, and all sample data is checked in. Existing scenarios
+  must keep rendering when new ones are added. Vitest + Testing Library run the
+  registry smoke test, and CI runs npm run lint, npm test -- --run, and
+  npm run build.
+
+  The demo depends on the published turkey-map-react package. Features that are
+  only on a library branch must be validated with an npm-pack tarball (or link)
+  until a release containing them is published.
+
+rules:
+  proposal:
+    - State whether the change is additive or breaking, and the dependency and
+      release sequencing impact.
+    - State what is explicitly out of scope.
+    - Cover every library feature the change demonstrates and link each to a
+      scenario.
+  specs:
+    - Every scenario requirement must state its visible controls, map or
+      renderer behavior, and accessible fallback/live feedback.
+    - Keep specs implementation-agnostic; do not prescribe component internals.
+  tasks:
+    - Include tests, README/scenario-table updates, and dependency/verification
+      tasks as explicit checklist items.
+    - Keep the existing scenario registry smoke test green throughout.
+
+operations:
+  apply:
+    guidance:
+      - Keep each scenario isolated in its own folder and registry entry.
+      - Prefer existing demo CSS classes before adding new shared styles.
+  archive:
+    guidance:
+      - Summarize which library release the scenarios target and any temporary
+        tarball/link workaround that can be removed.

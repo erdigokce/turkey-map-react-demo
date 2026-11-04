@@ -7,6 +7,11 @@ import ThemingScenario from './theming/ThemingScenario';
 import AccessibilityScenario from './accessibility/AccessibilityScenario';
 import DataEntryScenario from './data-entry/DataEntryScenario';
 import ProvinceRenderingScenario from './rendering/ProvinceRenderingScenario';
+import ChoroplethScenario from './choropleth/ChoroplethScenario';
+import ViewportScenario from './viewport/ViewportScenario';
+import HeadlessScenario from './headless/HeadlessScenario';
+import GeographyScenario from './geography/GeographyScenario';
+import GeojsonScenario from './geojson/GeojsonScenario';
 
 /**
  * Scenario registry.
@@ -97,5 +102,50 @@ export const SCENARIOS = [
     description: 'Instrument every province with a render counter. Hovering, selecting and focusing should move only the affected counters, even as the parent replaces its callbacks.',
     source: 'Feature: province-level render isolation and callback replacement',
     component: ProvinceRenderingScenario,
+  },
+  {
+    id: 'choropleth',
+    label: 'Choropleth studio',
+    eyebrow: 'Turkey Map React · Choropleth',
+    title: 'One metric, four colour scales',
+    description: 'Compare linear, quantize, quantile and threshold scales on the same population data. Toggle a no-data province, animate the fills and add a per-province colour override.',
+    source: 'Feature: values, colorScale, scaleType, thresholds, noDataColor, getColor and animateValues',
+    component: ChoroplethScenario,
+  },
+  {
+    id: 'viewport',
+    label: 'Zoom atlas',
+    eyebrow: 'Turkey Map React · Viewport',
+    title: 'Zoom, pan and fly to a province',
+    description: 'Drive the viewport with the wheel, drag, keyboard or built-in controls. Switch between controlled and uncontrolled state, then focus a province with the imperative ref API.',
+    source: 'Feature: zoomable, zoomControls, viewport, onViewportChange and TurkeyMapRef',
+    component: ViewportScenario,
+  },
+  {
+    id: 'headless',
+    label: 'Headless board',
+    eyebrow: 'Turkey Map React · Headless hook',
+    title: 'The map engine without the map component',
+    description: 'Render a custom SVG and a plain HTML list from the same useTurkeyMap state. Selection, roving focus, announcements, tooltips and a native-select fallback are all consumer-owned.',
+    source: 'Feature: useTurkeyMap, getContainerProps, getCityProps, getTooltipProps and changeSelection',
+    component: HeadlessScenario,
+  },
+  {
+    id: 'geography',
+    label: 'Geography atlas',
+    eyebrow: 'Turkey Map React · Geography data',
+    title: 'Regions, neighbours and centroids',
+    description: 'Use the built-in geography fields directly: colour by region, draw centroid markers, highlight land neighbours and inspect area, population and official codes.',
+    source: 'Feature: CityType region, centroid, neighbors, areaKm2, population, isoCode, nutsCode and altNames',
+    component: GeographyScenario,
+  },
+  {
+    id: 'geojson',
+    label: 'GeoJSON workshop',
+    eyebrow: 'Turkey Map React · GeoJSON',
+    title: 'From coordinates to clickable provinces',
+    description: 'Convert a checked-in FeatureCollection with geoJsonToCities. Switch key mappings, projection, padding and precision, then render the generated paths through the core entry.',
+    source: 'Feature: geoJsonToCities and the turkey-map-react/geojson entry point',
+    component: GeojsonScenario,
   },
 ];
